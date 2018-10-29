@@ -20,7 +20,8 @@ var currentPage=parseInt(0),
 	type="";
 
 
-mongoose.connect("mongodb://localhost/realestate",{useNewUrlParser: true});
+mongoose.connect("mongodb://realuser12345:realuser12345@ds119110.mlab.com:19110/realestate",{useNewUrlParser: true});
+
 app.set("view engine","ejs");
 
 app.use(methodOverride("_method"));//Tells node to look for pattern _method in url for eg "_method=PUT" 
@@ -425,6 +426,6 @@ function escapeRegex(text) {
 
 
 
-app.listen(4004,function(){
-	console.log("server started at port 4004")
+app.listen(process.env.PORT || 4004, function(){
+   console.log("started at 4004");
 });
